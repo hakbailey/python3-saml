@@ -240,7 +240,7 @@ class OneLogin_Saml2_Response(object):
                     method = scn.get('Method', None)
                     if method and method != OneLogin_Saml2_Constants.CM_BEARER:
                         continue
-                    sc_data = scn.find('saml:SubjectConfirmationData', namespaces=OneLogin_Saml2_Constants.NSMAP)
+                    sc_data = scn[0]
                     if sc_data is None:
                         continue
                     else:
